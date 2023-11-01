@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Log from './log'
 import "../styles/home.css"
 function Home(){
     return(
@@ -8,7 +9,8 @@ function Home(){
             <h1>hiiiii</h1>
             <input></input>
             <br></br>
-            <Link to="/">nmbbjhj</Link>
+            <Link to="/log">nmbbjhj</Link>
+            <Log></Log>
 
         </div>
         

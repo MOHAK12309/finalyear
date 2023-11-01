@@ -22,6 +22,7 @@ function App() {
           <Route path="/renderhome" element={<RenderHome />}></Route>
           <Route path="/log" element={<Log />}></Route>
           <Route path="/dashboard" element={<Dashboard/>}></Route>
+          <Route path="/home" element={<Home/>}></Route>
         </Routes>
       </div>
     </div>
