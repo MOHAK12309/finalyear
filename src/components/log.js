@@ -1,24 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/log.css";
+const illus = new URL("../images/image1.jpg", import.meta.url);
 
-function log() {
+function Log() {
   return (
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
     <>
+    <div className="login-signup">
       <div className="container">
     <input type="checkbox" id="flip"/>
     <div className="cover">
       <div className="front">
-        <img src="images/frontImg.jpg" alt=""/>
+        <img src={illus} alt=""/>
          <div className="text">
           <span className="text-1">MetaMetrics</span>
           <span className="text-2">Let's get connected</span>
         </div> 
       </div>
       <div className="back">
-        <img className="backImg" src="images/backImg.jpg" alt=""/>
+        <img className="backImg" src={illus} alt=""/>
         <div className="text2">
           <span className="text-3">Complete miles of journey <br></br> with one step</span>
           <span className="text-4">Let's get started</span>
@@ -77,7 +79,8 @@ function log() {
     </div>
     </div>
   </div>
+  </div>
     </>
   );
 }
-export default Home;
+export default Log;
