@@ -13,14 +13,15 @@
   background: #7d2ae8;
   padding: 30px;
 } */
-.container{
+.container2{
   position: relative;
-  max-width: 850px;
+ max-width: 850px;
+ margin: auto;
   width: 100%;
   background: #fff;
   padding: 40px 30px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  perspective: 2700px;
+ 
 }
 .login-signup{
   min-height: 100vh;
@@ -29,7 +30,7 @@
   background: #7d2ae8;
   padding: 30px;
 }
-.container .cover{
+.container2 .cover{
   position: absolute;
   top: 0;
   left: 50%;
@@ -40,11 +41,11 @@
   transform-origin: left;
   transform-style: preserve-3d;
 }
-.container #flip:checked ~ .cover{
+.container2 #flip:checked ~ .cover{
   transform: rotateY(-180deg);
 }
- .container .cover .front,
- .container .cover .back{
+ .container2 .cover .front,
+ .container2 .cover .back{
   position: absolute;
   top: 0;
   left: 0;
@@ -55,8 +56,8 @@
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
-.container .cover::before,
-.container .cover::after{
+.container2 .cover::before,
+.container2 .cover::after{
   content: '';
   position: absolute;
   height: 100%;
@@ -65,19 +66,19 @@
   opacity: 0.5;
   z-index: 12;
 }
-.container .cover::after{
+.container2 .cover::after{
   opacity: 0.3;
   transform: rotateY(180deg);
   backface-visibility: hidden;
 }
-.container .cover img{
+.container2 .cover img{
   position: absolute;
   height: 100%;
   width: 100%;
   object-fit: cover;
   z-index: 10;
 }
-.container .cover .text{
+.container2 .cover .text{
   position: absolute;
   z-index: 130;
   height: 100%;
@@ -100,12 +101,12 @@
 }
 
 
-.container .forms{
+.container2 .forms{
   height: 100%;
   width: 100%;
   background: #fff;
 }
-.container .form-content{
+.container2 .form-content{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -201,11 +202,11 @@
   text-align: center;
   margin-top: 25px;
 }
-.container #flip{
+.container2 #flip{
   display: none;
 }
 @media (max-width: 730px) {
-  .container .cover{
+  .container2 .cover{
     display: none;
   }
   .form-content .login-form,
@@ -215,10 +216,10 @@
   .form-content .signup-form{
     display: none;
   }
-  .container #flip:checked ~ .forms .signup-form{
+  .container2 #flip:checked ~ .forms .signup-form{
     display: block;
   }
-  .container #flip:checked ~ .forms .login-form{
+  .container2 #flip:checked ~ .forms .login-form{
     display: none;
   }
 }

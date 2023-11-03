@@ -1,22 +1,52 @@
   .main-container {
     margin: 0;
     padding: 0;
-    background-color: #9caac5;
+    background-color:#7d2ae8;
     color: #8989ac;
     font-family: 'Montserrat', sans-serif;
   }
 
   .content-section {
-    background-image: linear-gradient(#B4B4B3,#F1EFEF);
-    color: #221c1c;
-    padding: 8px;
-    border-radius: 2px;
+   background-color: white;
+   color: #7d2ae8;
+
+
+    padding: 20px;
+    border-radius: 5px;
     font-weight: 500;
+
   }
   .content-section h1{
     font-weight: 600;
   }
+  .chart-btn{
+    border: none;
+    background-color: none;
+    color: #7d2ae8;
+    font-size: 25px;
+    width: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    padding: 5px 10px 5px 10px;
+    
   
+  }
+  .logout{
+    padding: 5px 10px 5px 10px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+  }
+  .active{
+    background-color:#7d2ae8;
+    color: white;
+    border-radius: 5px;
+  }
+  .totalvistors{
+    color: #7d2ae8;
+    
+  }
   .main-container {
     grid-area: main;
     overflow-y: auto;
@@ -38,31 +68,19 @@
   
   .card {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+   
+    justify-content: center;
     padding: 8px 15px;
     border-radius: 5px;
+    
   }
   
-  .card:first-child {
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(105, 97, 219));
+  .card {
+    background-image: linear-gradient(to left, rgba(255,0,0,0),#7c2ae89b);
     border: none;
+   
   }
-  
-  .card:nth-child(2) {
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(218, 153, 55));
-    border: none;
-  }
-  
-  .card:nth-child(3) {
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgb(33, 160, 61));
-    border: none;
-  }
-  
-  .card:nth-child(4) {
-    background-image: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));
-    border: none;
-  }
+
   
   .card-inner {
     display: flex;
