@@ -209,7 +209,7 @@ function Dashboard() {
                 <br></br>
               </div>
             );
-          }):<div>Loading</div>
+          }):<div>Loading...</div>
           }
         </div>
       </div>
