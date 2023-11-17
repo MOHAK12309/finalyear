@@ -135,22 +135,22 @@ function Dashboard() {
       setyearlydata(aggregatedData);
     }
   }, [visitors]);
-  useEffect(() => {
-    if (!id) {
-      navigate("/log", {
-        replace: true,
-        state: {
-          signIn: true,
-        },
-      });
-    } else {
-      toast.error("You are not allowed to open this URL");
-      navigate("/");
-      handleUnique3();
-      handleUnique();
-      // Assuming fetchData is a function you want to call when 'id' is truthy
-    }
-  }, [navigate, id]);
+  // useEffect(() => {
+  //   if (!id) {
+  //     navigate("/log", {
+  //       replace: true,
+  //       state: {
+  //         signIn: true,
+  //       },
+  //     });
+  //   } else {
+  //     toast.error("You are not allowed to open this URL");
+  //     navigate("/");
+  //     handleUnique3();
+  //     handleUnique();
+  //     // Assuming fetchData is a function you want to call when 'id' is truthy
+  //   }
+  // }, [navigate, id]);
   const handleLogout2 = async (e) => {
     e.preventDefault();
 
@@ -179,6 +179,7 @@ function Dashboard() {
         <div className="card">
           <div className="card-inner">
             <h3>Total Visitors</h3>
+            <br></br>
           </div>
           {data.length !== 0 ? (
             data.map((item) => {
@@ -193,6 +194,7 @@ function Dashboard() {
           ) : (
             <div>Loading...</div>
           )}
+          
         </div>
         <div className="card">
           <div className="card-inner">
@@ -212,6 +214,99 @@ function Dashboard() {
           }):<div>Loading...</div>
           }
         </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3>Avg order value</h3>
+          </div>
+
+          { data.length !==0?
+
+          data.map((item) => {
+            return (
+              <div>
+                <h1> {item.response[4].avgOrderValue.value}</h1>
+
+                <br></br>
+              </div>
+            );
+          }):<div>Loading...</div>
+          }
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> cart Abandonment Count</h3>
+          </div>
+
+          { data.length !==0?
+
+          data.map((item) => {
+            return (
+              <div>
+                <h1> {item.response[5].
+        cartAbandonmentCount.value}</h1>
+
+                <br></br>
+              </div>
+            );
+          }):<div>Loading...</div>
+          }
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> Mobile web conversion rate</h3>
+          </div>
+
+          { data.length !==0?
+
+          data.map((item) => {
+            return (
+              <div>
+                <h1> {item.response[7].mobileWebConversionRate.value}</h1>
+
+                <br></br>
+              </div>
+            );
+          }):<div>Loading...</div>
+          }
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> life time Order Value</h3>
+          </div>
+
+          { data.length !==0?
+
+          data.map((item) => {
+            return (
+              <div>
+                <h1> {item.response[6].lifetimeOrderValue.value}</h1>
+
+                <br></br>
+              </div>
+            );
+          }):<div>Loading...</div>
+          }
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3>  conversion rate</h3>
+          </div>
+
+          { data.length !==0?
+
+          data.map((item) => {
+            return (
+              <div>
+                <h1> {item.response[3].conversionRate.value}</h1>
+
+                <br></br>
+              </div>
+            );
+          }):<div>Loading...</div>
+          }
+        </div>
+
+  
       </div>
       {/* className={`seller-dash-button ${show === "kounselo" ? "active2" : ""}`} */}
       <div className="columns">
