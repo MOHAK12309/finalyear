@@ -137,22 +137,22 @@ function Dashboard() {
       setyearlydata(aggregatedData);
     }
   }, [visitors]);
-  // useEffect(() => {
-  //   if (!id) {
-  //     navigate("/log", {
-  //       replace: true,
-  //       state: {
-  //         signIn: true,
-  //       },
-  //     });
-  //   } else {
-  //     toast.error("You are not allowed to open this URL");
-  //     navigate("/");
-  //     handleUnique3();
-  //     handleUnique();
-  //     // Assuming fetchData is a function you want to call when 'id' is truthy
-  //   }
-  // }, [navigate, id]);
+  useEffect(() => {
+    if (!id) {
+      navigate("/log", {
+        replace: true,
+        state: {
+          signIn: true,
+        },
+      });
+    } else {
+      toast.error("You are not allowed to open this URL");
+      navigate("/");
+      handleUnique3();
+      handleUnique();
+      // Assuming fetchData is a function you want to call when 'id' is truthy
+    }
+  }, [navigate, id]);
   const handleLogout2 = async (e) => {
     e.preventDefault();
 
@@ -176,17 +176,16 @@ function Dashboard() {
       <TypeAnimation
                       sequence={[
                         // Same substring at the start will only be typed out once, initially
-                        "Good afternoon,",
+                        `Good afternoon, ${name}`,
 
                         1000,
-                         `${name}`,
-                        1000, // wait 1s before replacing "Mice" with "Hamsters"
+                        // wait 1s before replacing "Mice" with "Hamsters"
                       ]}
                       className="purple_text"
                       wrapper="span"
                       speed={30}
                       style={{
-                        fontSize: "1em",
+                        fontSize: "2em",
                         display: "inline-block",
                         color: "#b8bbff",
                         fontWeight: "bolder",
