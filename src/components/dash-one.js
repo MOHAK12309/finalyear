@@ -1,6 +1,7 @@
 import "../styles/dash-one.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import CountUp from "react-countup";
 import {
   LineChart,
   Line,
@@ -11,6 +12,7 @@ import {
   Legend,
   Label,
 } from "recharts";
+import { TypeAnimation } from "react-type-animation";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -21,7 +23,7 @@ import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { useSelector } from "react-redux";
 function Dashboard() {
   const id = useSelector((state) => state.get_seller_profile_id.user_id);
-  const name= useSelector((state) => state.get_seller_profile_id.name);
+  const name = useSelector((state) => state.get_seller_profile_id.name);
   const [visitors, setVisitors] = useState([]);
   const [monthlyData, setMonthlyData] = useState([]);
   const [dailyData, setDailyData] = useState([]);
@@ -135,22 +137,22 @@ function Dashboard() {
       setyearlydata(aggregatedData);
     }
   }, [visitors]);
-  useEffect(() => {
-    if (!id) {
-      navigate("/log", {
-        replace: true,
-        state: {
-          signIn: true,
-        },
-      });
-    } else {
-      toast.error("You are not allowed to open this URL");
-      navigate("/");
-      handleUnique3();
-      handleUnique();
-      // Assuming fetchData is a function you want to call when 'id' is truthy
-    }
-  }, [navigate, id]);
+  // useEffect(() => {
+  //   if (!id) {
+  //     navigate("/log", {
+  //       replace: true,
+  //       state: {
+  //         signIn: true,
+  //       },
+  //     });
+  //   } else {
+  //     toast.error("You are not allowed to open this URL");
+  //     navigate("/");
+  //     handleUnique3();
+  //     handleUnique();
+  //     // Assuming fetchData is a function you want to call when 'id' is truthy
+  //   }
+  // }, [navigate, id]);
   const handleLogout2 = async (e) => {
     e.preventDefault();
 
@@ -171,7 +173,27 @@ function Dashboard() {
         </nav>
       </div>
       <div className="content-section">
-        <h1>Good afternoon, {name}. </h1>
+      <TypeAnimation
+                      sequence={[
+                        // Same substring at the start will only be typed out once, initially
+                        "Good afternoon,",
+
+                        1000,
+                         `${name}`,
+                        1000, // wait 1s before replacing "Mice" with "Hamsters"
+                      ]}
+                      className="purple_text"
+                      wrapper="span"
+                      speed={30}
+                      style={{
+                        fontSize: "1em",
+                        display: "inline-block",
+                        color: "#b8bbff",
+                        fontWeight: "bolder",
+                      }}
+                      repeat={Infinity}
+                    />
+        <h1> </h1>
         <p>Here is what's happening with your projects today:</p>
       </div>
 
@@ -179,12 +201,21 @@ function Dashboard() {
         <div className="card">
           <div className="card-inner">
             <h3>Total Visitors</h3>
+            <br></br>
           </div>
           {data.length !== 0 ? (
             data.map((item) => {
               return (
                 <div>
-                  <h1> {item.response[0].totalVisitors.value}</h1>
+                  <h1>
+                    
+                    <CountUp
+                      start={0}
+                      end={item.response[0].totalVisitors.value}
+                      duration={0.5}
+                      separator=","
+                    />
+                  </h1>
 
                   <br></br>
                 </div>
@@ -199,18 +230,168 @@ function Dashboard() {
             <h3>Unique Visitors</h3>
           </div>
 
-          { data.length !==0?
+          {data.length !== 0 ? (
+            data.map((item) => {
+              return (
+                <div>
+                  <h1>   <CountUp
+                      start={0}
+                      end={item.response[1].totalUniqueVisitors.value}
+                      duration={0.5}
+                      separator=","
+                    /> </h1>
 
-          data.map((item) => {
-            return (
-              <div>
-                <h1> {item.response[1].totalUniqueVisitors.value}</h1>
+                  <br></br>
+                </div>
+              );
+            })
+          ) : (
+            <div>Loading...</div>
+          )}
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3>Avg order value</h3>
+          </div>
 
-                <br></br>
-              </div>
-            );
-          }):<div>Loading...</div>
-          }
+          {data.length !== 0 ? (
+            data.map((item) => {
+              return (
+                <div>
+                  <h1>  <CountUp
+                      start={0}
+                      end={item.response[4].avgOrderValue.value}
+                      duration={0.5}
+                      separator=","
+                    /></h1>
+
+                  <br></br>
+                </div>
+              );
+            })
+          ) : (
+            <div>Loading...</div>
+          )}
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> cart Abandonment Count</h3>
+          </div>
+
+          {data.length !== 0 ? (
+            data.map((item) => {
+              return (
+                <div>
+                  <h1> <CountUp
+                      start={0}
+                      end={item.response[5].cartAbandonmentCount.value}
+                      duration={0.5}
+                      separator=","
+                    /> </h1>
+
+                  <br></br>
+                </div>
+              );
+            })
+          ) : (
+            <div>Loading...</div>
+          )}
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> Mobile web conversion rate</h3>
+          </div>
+
+          {data.length !== 0 ? (
+            data.map((item) => {
+              return (
+                <div>
+                  <h1><CountUp
+                      start={0}
+                      end={item.response[7].mobileWebConversionRate.value}
+                      duration={0.5}
+                      separator=","
+                    /> </h1>
+
+                  <br></br>
+                </div>
+              );
+            })
+          ) : (
+            <div>Loading...</div>
+          )}
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> life time Order Value</h3>
+          </div>
+
+          {data.length !== 0 ? (
+            data.map((item) => {
+              return (
+                <div>
+                  <h1><CountUp
+                      start={0}
+                      end={item.response[6].lifetimeOrderValue.value}
+                      duration={0.5}
+                      separator=","
+                    /> </h1>
+
+                  <br></br>
+                </div>
+              );
+            })
+          ) : (
+            <div>Loading...</div>
+          )}
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> conversion rate</h3>
+          </div>
+
+          {data.length !== 0 ? (
+            data.map((item) => {
+              return (
+                <div>
+                  <h1> <CountUp
+                      start={0}
+                      end={item.response[3].conversionRate.value}
+                      duration={0.5}
+                      separator=","
+                    /></h1>
+
+                  <br></br>
+                </div>
+              );
+            })
+          ) : (
+            <div>Loading...</div>
+          )}
+        </div>
+        <div className="card">
+          <div className="card-inner">
+            <h3> average Page Load Time</h3>
+          </div>
+
+          {data.length !== 0 ? (
+            data.map((item) => {
+              return (
+                <div>
+                  <h1><CountUp
+                      start={0}
+                      end={item.response[2].averagePageLoadTime.value}
+                      duration={0.5}
+                      separator=","
+                    /> </h1>
+
+                  <br></br>
+                </div>
+              );
+            })
+          ) : (
+            <div>Loading...</div>
+          )}
         </div>
       </div>
       {/* className={`seller-dash-button ${show === "kounselo" ? "active2" : ""}`} */}

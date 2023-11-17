@@ -9,7 +9,7 @@ import { Toastcontainer2, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getUserIdFromAuth } from "../Redux/actions/GetSellerIdFromAuthActionCreators";
 const illus = new URL("../images/image1.jpg", import.meta.url);
-const baseUrl = "http://localhost:8000";
+const baseUrl = "https://server.careerclassroom.in";
 function Log() {
   const [name, setName] = useState("");
   const [lastname, setLastName] = useState("");

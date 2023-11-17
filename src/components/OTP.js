@@ -12,7 +12,7 @@ import OtpInput from "react-otp-input";
 function About (){
   const navigate = useNavigate("");
   const dispatch = useDispatch("");
-  const baseUrl = "http://localhost:8000"
+  const baseUrl = "https://server.careerclassroom.in"
   const [OTP, setOTP] = useState("");
   const handleVerify = async (e) => {
     e.preventDefault();
