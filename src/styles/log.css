@@ -34,15 +34,15 @@
   top: 0;
   left: 50%;
   height: 100%;
-  width: 100%;
+  width: 50%;
   z-index: 98;
   transition: all 1s ease;
   transform-origin: left;
   transform-style: preserve-3d;
 }
-/* .container2 #flip:checked ~ .cover {
+.container2 #flip:checked ~ .cover {
   transform: rotateY(-180deg);
-} */
+}
 .container2 .cover .front,
 .container2 .cover .back {
   position: absolute;
