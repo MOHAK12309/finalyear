@@ -9,7 +9,7 @@ import RenderHome from "./components/renderhome";
 import Log from "./components/log";
 import Dashboard from "./components/dash-one";
 import Dashtwo from "./components/dash-two";
-import Reg from "./components/Creg";
+import About from "./components/OTP";
 
 // importing service creation pages
 
@@ -24,10 +24,10 @@ function App() {
         <Routes>
           <Route path="/renderhome" element={<RenderHome />}></Route>
           <Route path="/log" element={<Log />}></Route>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
+          <Route path="/" element={<Dashboard />}></Route>
           <Route path="/home" element={<Home />}></Route>
           <Route path="/dashtwo" element={<Dashtwo />}></Route>
-          <Route path="/reg" element={<Reg />}></Route>
+          <Route path="/otp" element={<About/>}></Route>
         </Routes>
       </div>
     </div>
