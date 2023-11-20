@@ -10,6 +10,7 @@ import Log from "./components/log";
 import Dashboard from "./components/dash-one";
 import Dashtwo from "./components/dash-two";
 import About from "./components/OTP";
+import App2 from "./components/dash-two";
 
 // importing service creation pages
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/home" element={<Home />}></Route>
           <Route path="/dashtwo" element={<Dashtwo />}></Route>
           <Route path="/otp" element={<About/>}></Route>
+          <Route path="/dash2" element={<App2/>}/>
         </Routes>
       </div>
     </div>
