@@ -107,3 +107,67 @@ form button:hover {
     padding: 16px 48px;
   }
 }
+
+
+/* side dash */
+
+.logosec{
+
+  height: 60px;
+  background-color: purple;
+  padding: 10px;
+}
+.sidesec{
+  min-height: 100vh ;
+  background-color: #7d2ae8;
+
+ 
+}
+.button-dashboard{
+  width: 100%;
+  padding: 15px;
+  background:transparent;
+  color: white;
+  border: none;
+  text-align: left;
+
+}
+.side-head{
+  color: white;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+
+}
+.onActive{
+
+}
+.nav2{
+width: 100%;
+  background-color: #3333337b;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sideLeft{
+
+animation-name: delay;
+
+animation-duration: 1s;
+animation-fill-mode: forwards;
+}
+@keyframes delay {
+  0%{
+   width: 200px;
+  }
+  100%{
+    width: 40px;
+  }
+  
+}
+
+  
+.sidesec2{
+  display: none;
+}

@@ -137,22 +137,22 @@ function Dashboard() {
       setyearlydata(aggregatedData);
     }
   }, [visitors]);
-  useEffect(() => {
-    if (!id) {
-      navigate("/log", {
-        replace: true,
-        state: {
-          signIn: true,
-        },
-      });
-    } else {
-      toast.error("You are not allowed to open this URL");
-      navigate("/");
-      handleUnique3();
-      handleUnique();
-      // Assuming fetchData is a function you want to call when 'id' is truthy
-    }
-  }, [navigate, id]);
+  // useEffect(() => {
+  //   if  (!id) {
+  //     navigate("/log", {
+  //       replace: true,
+  //       state: {
+  //         signIn: true,
+  //       },
+  //     });
+  //   } else {
+  //     toast.error("You are not allowed to open this URL");
+  //     navigate("/");
+  //     handleUnique3();
+  //     handleUnique();
+  //     // Assuming fetchData is a function you want to call when 'id' is truthy
+  //   }
+  // }, [navigate, id]);
   const handleLogout2 = async (e) => {
     e.preventDefault();
 
@@ -162,7 +162,7 @@ function Dashboard() {
   };
   return (
     <div className="main-container">
-      <div className="main-title">
+      {/* <div className="main-title">
         <h3>DASHBOARD</h3>
         <nav>
           <ul>
@@ -171,27 +171,27 @@ function Dashboard() {
             </button>
           </ul>
         </nav>
-      </div>
+      </div> */}
       <div className="content-section">
-      <TypeAnimation
-                      sequence={[
-                        // Same substring at the start will only be typed out once, initially
-                        `Good afternoon, ${name}`,
+        <TypeAnimation
+          sequence={[
+            // Same substring at the start will only be typed out once, initially
+            `Good afternoon, ${name}`,
 
-                        1000,
-                        // wait 1s before replacing "Mice" with "Hamsters"
-                      ]}
-                      className="purple_text"
-                      wrapper="span"
-                      speed={30}
-                      style={{
-                        fontSize: "2em",
-                        display: "inline-block",
-                        color: "#b8bbff",
-                        fontWeight: "bolder",
-                      }}
-                      repeat={Infinity}
-                    />
+            1000,
+            // wait 1s before replacing "Mice" with "Hamsters"
+          ]}
+          className="purple_text"
+          wrapper="span"
+          speed={30}
+          style={{
+            fontSize: "2em",
+            display: "inline-block",
+            color: "#b8bbff",
+            fontWeight: "bolder",
+          }}
+          repeat={Infinity}
+        />
         <h1> </h1>
         <p>Here is what's happening with your projects today:</p>
       </div>
@@ -207,7 +207,6 @@ function Dashboard() {
               return (
                 <div>
                   <h1>
-                    
                     <CountUp
                       start={0}
                       end={item.response[0].totalVisitors.value}
@@ -233,12 +232,15 @@ function Dashboard() {
             data.map((item) => {
               return (
                 <div>
-                  <h1>   <CountUp
+                  <h1>
+                    {" "}
+                    <CountUp
                       start={0}
                       end={item.response[1].totalUniqueVisitors.value}
                       duration={0.5}
                       separator=","
-                    /> </h1>
+                    />{" "}
+                  </h1>
 
                   <br></br>
                 </div>
@@ -257,12 +259,15 @@ function Dashboard() {
             data.map((item) => {
               return (
                 <div>
-                  <h1>  <CountUp
+                  <h1>
+                    {" "}
+                    <CountUp
                       start={0}
                       end={item.response[4].avgOrderValue.value}
                       duration={0.5}
                       separator=","
-                    /></h1>
+                    />
+                  </h1>
 
                   <br></br>
                 </div>
@@ -281,12 +286,15 @@ function Dashboard() {
             data.map((item) => {
               return (
                 <div>
-                  <h1> <CountUp
+                  <h1>
+                    {" "}
+                    <CountUp
                       start={0}
                       end={item.response[5].cartAbandonmentCount.value}
                       duration={0.5}
                       separator=","
-                    /> </h1>
+                    />{" "}
+                  </h1>
 
                   <br></br>
                 </div>
@@ -305,12 +313,14 @@ function Dashboard() {
             data.map((item) => {
               return (
                 <div>
-                  <h1><CountUp
+                  <h1>
+                    <CountUp
                       start={0}
                       end={item.response[7].mobileWebConversionRate.value}
                       duration={0.5}
                       separator=","
-                    /> </h1>
+                    />{" "}
+                  </h1>
 
                   <br></br>
                 </div>
@@ -329,12 +339,14 @@ function Dashboard() {
             data.map((item) => {
               return (
                 <div>
-                  <h1><CountUp
+                  <h1>
+                    <CountUp
                       start={0}
                       end={item.response[6].lifetimeOrderValue.value}
                       duration={0.5}
                       separator=","
-                    /> </h1>
+                    />{" "}
+                  </h1>
 
                   <br></br>
                 </div>
@@ -353,12 +365,15 @@ function Dashboard() {
             data.map((item) => {
               return (
                 <div>
-                  <h1> <CountUp
+                  <h1>
+                    {" "}
+                    <CountUp
                       start={0}
                       end={item.response[3].conversionRate.value}
                       duration={0.5}
                       separator=","
-                    /></h1>
+                    />
+                  </h1>
 
                   <br></br>
                 </div>
@@ -377,12 +392,14 @@ function Dashboard() {
             data.map((item) => {
               return (
                 <div>
-                  <h1><CountUp
+                  <h1>
+                    <CountUp
                       start={0}
                       end={item.response[2].averagePageLoadTime.value}
                       duration={0.5}
                       separator=","
-                    /> </h1>
+                    />{" "}
+                  </h1>
 
                   <br></br>
                 </div>
