@@ -154,7 +154,7 @@ width: 100%;
 
 animation-name: delay;
 
-animation-duration: 1s;
+animation-duration: 0.5s;
 animation-fill-mode: forwards;
 }
 @keyframes delay {
