@@ -187,11 +187,53 @@ function Log() {
                         />
                       </div>
 
-                      <div className="text">
-                        <a href="#">Forgot password?</a>
+                      {/* <div className="text">
+                        <a onClick={() => setforgot("ResetPassword")} href="#">
+                          Forgot password?
+                        </a>
+                      </div> */}
+                      <div className="button input-box">
+                        <input
+                          onClick={() => setforgot("ResetPassword")}
+                          type="submit"
+                          value="Submit"
+                        />
+                      </div>
+                      <div className="text sign-up-text">
+                        Don't have an account?{" "}
+                        <label for="flip">Sigup now</label>
+                      </div>
+                    </div>
+                  </form>
+                )}
+                {forgot === "ResetPassword" && (
+                  <form onSubmit={handleLogin}>
+                    <div className="input-boxes">
+                      <div className="input-box">
+                        <i className="fas fa-lock"></i>
+                        <input
+                          type="password"
+                          placeholder="Enter new password"
+                          required
+                          value={password}
+                          onChange={(e) => setpasswod(e.target.value)}
+                        />
+                      </div>
+                      <div className="input-box">
+                        <i className="fas fa-lock"></i>
+                        <input
+                          type="password"
+                          placeholder="Confirm Password"
+                          required
+                          value={password}
+                          onChange={(e) => setpasswod(e.target.value)}
+                        />
                       </div>
                       <div className="button input-box">
-                        <input type="submit" value="Submit" />
+                        <input
+                          type="submit"
+                          value="Submit"
+                        />
                       </div>
                       <div className="text sign-up-text">
                         Don't have an account?{" "}
