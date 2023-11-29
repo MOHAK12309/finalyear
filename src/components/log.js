@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { Toastcontainer2, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { getUserIdFromAuth } from "../Redux/actions/GetSellerIdFromAuthActionCreators";
-const illus = new URL("../images/image1.jpg", import.meta.url);
+const illus = new URL("../images/image2.jpg", import.meta.url);
 const baseUrl = "https://server.careerclassroom.in";
 function Log() {
   const [name, setName] = useState("");
