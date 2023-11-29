@@ -20,7 +20,9 @@ function Log() {
   const [OTP, setOTP] = useState("");
   const [sign, setsign] = useState("signup");
   const navigate = useNavigate("");
+  const [forgot, setforgot] = useState("login");
   const dispatch = useDispatch("");
+
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
@@ -131,39 +133,73 @@ function Log() {
             <div className="form-content">
               <div className="login-form">
                 <div className="title">Login</div>
-                <form onSubmit={handleLogin}>
-                  <div className="input-boxes">
-                    <div className="input-box">
-                      <i className="fas fa-envelope"></i>
-                      <input
-                        type="text"
-                        placeholder="Enter your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                      />
+                {/* login for got switching */}
+                {forgot === "login" && (
+                  <form onSubmit={handleLogin}>
+                    <div className="input-boxes">
+                      <div className="input-box">
+                        <i className="fas fa-envelope"></i>
+                        <input
+                          type="text"
+                          placeholder="Enter your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                        />
+                      </div>
+                      <div className="input-box">
+                        <i className="fas fa-lock"></i>
+                        <input
+                          type="password"
+                          placeholder="Enter your password"
+                          required
+                          value={password}
+                          onChange={(e) => setpasswod(e.target.value)}
+                        />
+                      </div>
+                      <div className="text">
+                        <a onClick={() => setforgot("forgot")} href="#">
+                          Forgot password?
+                        </a>
+                      </div>
+                      <div className="button input-box">
+                        <input type="submit" value="Submit" />
+                      </div>
+                      <div className="text sign-up-text">
+                        Don't have an account?{" "}
+                        <label for="flip">Sigup now</label>
+                      </div>
                     </div>
-                    <div className="input-box">
-                      <i className="fas fa-lock"></i>
-                      <input
-                        type="password"
-                        placeholder="Enter your password"
-                        required
-                        value={password}
-                        onChange={(e) => setpasswod(e.target.value)}
-                      />
+                  </form>
+                )}
+
+                {forgot === "forgot" && (
+                  <form onSubmit={handleLogin}>
+                    <div className="input-boxes">
+                      <div className="input-box">
+                        <i className="fas fa-envelope"></i>
+                        <input
+                          type="text"
+                          placeholder="Enter your email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                        />
+                      </div>
+
+                      <div className="text">
+                        <a href="#">Forgot password?</a>
+                      </div>
+                      <div className="button input-box">
+                        <input type="submit" value="Submit" />
+                      </div>
+                      <div className="text sign-up-text">
+                        Don't have an account?{" "}
+                        <label for="flip">Sigup now</label>
+                      </div>
                     </div>
-                    <div className="text">
-                      <a href="#">Forgot password?</a>
-                    </div>
-                    <div className="button input-box">
-                      <input type="submit" value="Submit" />
-                    </div>
-                    <div className="text sign-up-text">
-                      Don't have an account? <label for="flip">Sigup now</label>
-                    </div>
-                  </div>
-                </form>
+                  </form>
+                )}
               </div>
               <div className="signup-form">
                 <div className="title">Signup</div>

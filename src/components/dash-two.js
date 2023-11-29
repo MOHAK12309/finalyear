@@ -16,6 +16,7 @@ const App2 = () => {
   return (
     <>
       <div style={{ display: "flex" }}>
+        {/* left bar */}
         <div className={`sideRight ${
             side ? 'sideLeft':""
           }`}>
@@ -54,6 +55,7 @@ const App2 = () => {
           </div>
 
         </div>
+        {/*right   */}
         <div style={{ width: "100%" }}>
           <div className="nav2" style={{ padding: "13px" }}>
             <div>
@@ -64,6 +66,7 @@ const App2 = () => {
               <button className="logout">Logout</button>
             </div>
           </div>
+          {/* dahsboard */}
           <div style={{ maxHeight: "92vh", overflowY: "scroll" }}>
             <Dashboard />
           </div>
