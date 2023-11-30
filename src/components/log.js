@@ -187,15 +187,15 @@ function Log() {
                         />
                       </div>
 
-                      <div className="text">
+                      {/* <div className="text">
                         <a href="#">Forgot password?</a>
-                      </div>
+                      </div> */}
                       <div className="button input-box">
                         <input type="submit" value="Submit" />
                       </div>
                       <div className="text sign-up-text">
-                        Don't have an account?{" "}
-                        <label for="flip">Sigup now</label>
+                        Back to{" "}
+                        <label for="flip">Login</label>
                       </div>
                     </div>
                   </form>

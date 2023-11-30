@@ -57,15 +57,20 @@ const App2 = () => {
         </div>
         {/*right   */}
         <div style={{ width: "100%" }}>
+          {
           <div className="nav2" style={{ padding: "13px" }}>
-            <div>
-                
-              <h4   onClick={toggleMode}style={{ cursor: "pointer" }}>hamburger</h4>
-            </div>
-            <div>
-              <button className="logout">Logout</button>
-            </div>
-          </div>
+      <div className="left-section">
+        <h4 onClick={toggleMode} style={{ cursor: "pointer" }}>hamburger</h4>
+        <button className="user-button">User</button>
+        <button className="settings-button">Settings</button>
+      </div>
+      
+      <div className="right-section">
+        <button className="notifications">Notifications</button>
+        <button className="email">Email</button>
+        <button className="logout">Logout</button>
+      </div>
+    </div>}
           {/* dahsboard */}
           <div style={{ maxHeight: "92vh", overflowY: "scroll" }}>
             <Dashboard />

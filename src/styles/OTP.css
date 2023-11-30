@@ -139,9 +139,9 @@ form button:hover {
   font-size: 20px;
 
 }
-.onActive{
+/* .onActive{
 
-}
+} */
 .nav2{
 width: 100%;
   background-color: #3333337b;
@@ -171,3 +171,34 @@ animation-fill-mode: forwards;
 .sidesec2{
   display: none;
 }
+
+/* Navbar..... */
+
+.nav2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+h4,
+.user-button,
+.settings-button,
+.logout,
+.notifications,
+.email {
+  margin: 0 10px;
+}
+
+/* Add additional styling as needed */
