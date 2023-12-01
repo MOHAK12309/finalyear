@@ -1,13 +1,14 @@
   .main-container {
     margin: 0;
     padding: 0;
-    background-color:#7c2ae845;
+    
     color: #8989ac;
     font-family: 'Montserrat', sans-serif;
   }
 
   .content-section {
    background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
    color: #7d2ae8;
 
 
