@@ -199,7 +199,7 @@ function Dashboard() {
       </div>
 
       <div className="main-cards">
-        <div className="card">
+        <div className="card-one">
           <div className="card-inner">
             <h3>Total Visitors</h3>
             <br></br>
@@ -225,7 +225,7 @@ function Dashboard() {
             <div>Loading...</div>
           )}
         </div>
-        <div className="card">
+        <div className="card-two">
           <div className="card-inner">
             <h3>Unique Visitors</h3>
           </div>
@@ -252,7 +252,7 @@ function Dashboard() {
             <div>Loading...</div>
           )}
         </div>
-        <div className="card">
+        <div className="card-three">
           <div className="card-inner">
             <h3>Avg order value</h3>
           </div>
@@ -279,7 +279,7 @@ function Dashboard() {
             <div>Loading...</div>
           )}
         </div>
-        <div className="card">
+        <div className="card-four">
           <div className="card-inner">
             <h3> cart Abandonment Count</h3>
           </div>
@@ -306,7 +306,7 @@ function Dashboard() {
             <div>Loading...</div>
           )}
         </div>
-        <div className="card">
+        <div className="card-five">
           <div className="card-inner">
             <h3> Mobile web conversion rate</h3>
           </div>
@@ -332,7 +332,7 @@ function Dashboard() {
             <div>Loading...</div>
           )}
         </div>
-        <div className="card">
+        <div className="card-six">
           <div className="card-inner">
             <h3> life time Order Value</h3>
           </div>
@@ -358,7 +358,7 @@ function Dashboard() {
             <div>Loading...</div>
           )}
         </div>
-        <div className="card">
+        <div className="card-seven">
           <div className="card-inner">
             <h3> conversion rate</h3>
           </div>
@@ -385,7 +385,7 @@ function Dashboard() {
             <div>Loading...</div>
           )}
         </div>
-        <div className="card">
+        <div className="card-eight">
           <div className="card-inner">
             <h3> average Page Load Time</h3>
           </div>

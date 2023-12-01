@@ -139,7 +139,7 @@ form button:hover {
   font-size: 20px;
 
 }
-.onActive{
+/* .onActive{
 
 }
 .dashboardmain{
@@ -191,3 +191,28 @@ animation-fill-mode: forwards;
 .sidesec2{
   display: none;
 }
+
+/* Navbar..... */
+
+
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+h4,
+.user-button,
+.settings-button,
+.logout,
+.notifications,
+.email {
+  margin: 0 10px;
+}
+
+/* Add additional styling as needed */

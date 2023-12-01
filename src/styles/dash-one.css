@@ -67,20 +67,92 @@
     margin: 15px 0;
   }
   
-  .card {
-    background-color: white;
-   
+  
+  .card-one {
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0),#7c2ae89b); */
+    background-color: rgb(2, 0, 128);
+    border: none;
     justify-content: center;
     padding: 8px 15px;
     border-radius: 5px;
-    
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 150px;
+  }
+  .card-two {
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0),#3081D0); */
+    background-color: #1278b3;
+    border: none;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 180px;
+  }
+  .card-three {
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0),#FF9209); */
+    background-color: #e02626;
+    border: none;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 180px;
+  }
+  .card-four {
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0),#B31312); */
+    background-color:  #FFC107;
+    border: none;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 180px;
+  }
+  .card-five {
+    background-color:#198754;
+    border: none;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 180px;
+  }
+  .card-six {
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0),#7c2ae89b); */
+    background-color: #7d2ae8;
+    border: none;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 180px;
+  }
+  .card-seven {
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0),#7c2ae89b); */
+    background-color:  #fd3995;
+    border: none;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 180px;
+  }
+  .card-eight {
+    /* background-image: linear-gradient(to left, rgba(255,0,0,0),#7c2ae89b); */
+    background-color: #9fcc2e;
+    border: none;
+    justify-content: center;
+    padding: 8px 15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 180px;
   }
   
-  .card {
+  /* .card {
     background-image: linear-gradient(to left, rgba(255,0,0,0),#7c2ae89b);
     border: none;
    
-  }
+  } */
 
   
   .card-inner {
