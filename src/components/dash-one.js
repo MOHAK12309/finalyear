@@ -21,6 +21,8 @@ import { getUserIdFromAuth } from "../Redux/actions/GetSellerIdFromAuthActionCre
 import Unique from "./unique";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { useSelector } from "react-redux";
+import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
 function Dashboard() {
   const id = useSelector((state) => state.get_seller_profile_id.user_id);
   const name = useSelector((state) => state.get_seller_profile_id.name);
@@ -416,37 +418,35 @@ function Dashboard() {
           <h2 className="totalvistors">Total Visitors</h2>
           <div className="column-content">
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <div style={{ margin: "30px" }}>
-                <button
+              <ButtonGroup
+                variant="outlined"
+                aria-label="outlined button group"
+              >
+                <Button
                   className={`chart-btn ${
                     showCharts === "month" ? "active" : ""
                   }`}
                   onClick={() => setShowcharts("month")}
                 >
-                  {" "}
                   Month
-                </button>
-              </div>
-              <div style={{ margin: "30px" }}>
-                <button
+                </Button>
+                <Button
                   className={`chart-btn ${
                     showCharts === "day" ? "active" : ""
                   }`}
                   onClick={() => setShowcharts("day")}
                 >
                   Day
-                </button>
-              </div>
-              <div style={{ margin: "30px" }}>
-                <button
+                </Button>
+                <Button
                   className={`chart-btn ${
                     showCharts === "year" ? "active" : ""
                   }`}
                   onClick={() => setShowcharts("year")}
                 >
                   Year
-                </button>
-              </div>
+                </Button>
+              </ButtonGroup>
             </div>
             <div>
               <div></div>

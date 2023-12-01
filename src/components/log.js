@@ -191,7 +191,10 @@ function Log() {
                         <a href="#">Forgot password?</a>
                       </div> */}
                       <div className="button input-box">
-                        <input type="submit" value="Submit" />
+                        <input
+                          type="submit"
+                          value="Submit"
+                        />
                       </div>
                       <div className="text sign-up-text">
                         Back to{" "}

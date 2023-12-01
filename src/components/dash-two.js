@@ -7,7 +7,7 @@ import Drawer from "react-modern-drawer";
 import "../styles/OTP.css";
 import "react-modern-drawer/dist/index.css";
 import Dashboard from "./dash-one";
-
+const logo = new URL("../images/logo.png", import.meta.url);
 const App2 = () => {
   const [side, setSide] = useState(false);
   const toggleMode = () => {
@@ -17,43 +17,40 @@ const App2 = () => {
     <>
       <div style={{ display: "flex" }}>
         {/* left bar */}
-        <div className={`sideRight ${
-            side ? 'sideLeft':""
-          }`}>
-    
-          <div    >
-            
-            <div  className={`sidesec ${
-            side ? '':""
-          }`} style={{ textAlign: "left" }}>
-            <div className={`logosec ${
-            side ? 'sidesec3':""
-          }`} >
-              <h2 
-               className={` ${
-                side ? 'sidesec2':""
-              }`} 
-              
-              
-              
-              
-              style={{ textAlign: "center" }}>Logo here</h2>
-            </div>
-              <button  className="button-dashboard"><span     className={` ${
-                side ? 'sidesec2':""
-              }`} >Dashboard</span></button>
-              <h6  className={`side-head ${
-                side ? 'sidesec2':""
-              }`} >Analysis</h6>
-              <button className="button-dashboard"><span    className={` ${
-                side ? 'sidesec2':""
-              }`} >Report</span></button>
-              <button className="button-dashboard"><span    className={` ${
-                side ? 'sidesec2':""
-              }`} >Real time Analysis</span></button>
+        <div className={`sideRight ${side ? "sideLeft" : ""}`}>
+          <div>
+            <div
+              className={`sidesec ${side ? "" : ""}`}
+              style={{ textAlign: "left" }}
+            >
+              <div className={`logosec ${side ? "sidesec3" : ""}`}>
+                <h2
+                  className={` ${side ? "sidesec2" : ""}`}
+                  style={{ textAlign: "center" }}
+                >
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    style={{ width: "70px", height: "45px" }}
+                  />
+                </h2>
+              </div>
+              <button className="button-dashboard">
+                <span className={` ${side ? "sidesec2" : ""}`}>Dashboard</span>
+              </button>
+              <h6 className={`side-head ${side ? "sidesec2" : ""}`}>
+                Analysis
+              </h6>
+              <button className="button-dashboard">
+                <span className={` ${side ? "sidesec2" : ""}`}>Report</span>
+              </button>
+              <button className="button-dashboard">
+                <span className={` ${side ? "sidesec2" : ""}`}>
+                  Real time Analysis
+                </span>
+              </button>
             </div>
           </div>
-
         </div>
         {/*right   */}
         <div style={{ width: "100%" }}>
