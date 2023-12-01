@@ -139,7 +139,7 @@ form button:hover {
   font-size: 20px;
 
 }
-/* .onActive{
+.onActive{
 
 }
 .dashboardmain{
@@ -150,7 +150,7 @@ form button:hover {
   width: 10px;
 }
 
-/* Track */
+ /* Track */
 ::-webkit-scrollbar-track {
   
   border-radius: 5px;
