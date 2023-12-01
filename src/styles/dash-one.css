@@ -1,13 +1,14 @@
   .main-container {
     margin: 0;
     padding: 0;
-    background-color:#7c2ae845;
+    
     color: #8989ac;
     font-family: 'Montserrat', sans-serif;
   }
 
   .content-section {
    background-color: white;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;
    color: #7d2ae8;
 
 
@@ -75,7 +76,7 @@
     padding: 8px 15px;
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    height: 180px;
+    height: 150px;
   }
   .card-two {
     /* background-image: linear-gradient(to left, rgba(255,0,0,0),#3081D0); */
@@ -219,6 +220,8 @@
     
     display: flex;
   }
+
+  
   
   .main-title li {
     margin: 0 10px;

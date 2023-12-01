@@ -114,12 +114,12 @@ form button:hover {
 .logosec{
 
   height: 60px;
-  background-color: rgb(37, 34, 37);
+  background-color: black;
   padding: 10px;
 }
 .sidesec{
   min-height: 100vh ;
-  background-color: #7d2ae8;
+  background-color:rgba(0, 0, 0, 0.815);
 
  
 }
@@ -141,10 +141,30 @@ form button:hover {
 }
 /* .onActive{
 
-} */
+}
+.dashboardmain{
+  overflow-y: scroll;
+  height: 100vh;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
 .nav2{
 width: 100%;
-  background-color: #3333337b;
+  background-color: white;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.021);
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -174,13 +194,7 @@ animation-fill-mode: forwards;
 
 /* Navbar..... */
 
-.nav2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333;
-  color: white;
-}
+
 
 .left-section {
   display: flex;

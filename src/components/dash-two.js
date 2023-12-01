@@ -7,7 +7,8 @@ import Drawer from "react-modern-drawer";
 import "../styles/OTP.css";
 import "react-modern-drawer/dist/index.css";
 import Dashboard from "./dash-one";
-const logo = new URL("../images/logo.png", import.meta.url);
+const logo = new URL("../images/logo-no-background.png", import.meta.url);
+const logo2 = new URL("../images/hamburger.png", import.meta.url);
 const App2 = () => {
   const [side, setSide] = useState(false);
   const toggleMode = () => {
@@ -31,7 +32,7 @@ const App2 = () => {
                   <img
                     src={logo}
                     alt="Logo"
-                    style={{ width: "70px", height: "45px" }}
+                    style={{ width: "100px", height: "35px" }}
                   />
                 </h2>
               </div>
@@ -54,10 +55,13 @@ const App2 = () => {
         </div>
         {/*right   */}
         <div style={{ width: "100%" }}>
-          {
+         
+          {/* dahsboard */}
+          <div className="dashboardmain">
+          
           <div className="nav2" style={{ padding: "13px" }}>
       <div className="left-section">
-        <h4 onClick={toggleMode} style={{ cursor: "pointer" }}>hamburger</h4>
+        <h4 onClick={toggleMode} style={{ cursor: "pointer" }}><img src={logo2} width="30px"></img> </h4>
         <button className="user-button">User</button>
         <button className="settings-button">Settings</button>
       </div>
@@ -67,9 +71,7 @@ const App2 = () => {
         <button className="email">Email</button>
         <button className="logout">Logout</button>
       </div>
-    </div>}
-          {/* dahsboard */}
-          <div style={{ maxHeight: "92vh", overflowY: "scroll" }}>
+    </div>
             <Dashboard />
           </div>
         </div>
