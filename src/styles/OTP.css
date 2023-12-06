@@ -36,6 +36,10 @@
   color: #333;
   font-weight: 500;
 }
+.dashboardmain{
+  max-height: 100vh;
+  overflow-y: scroll;
+}
 .back{
   background-color: #7d2ae8;
   height: 100vh;
