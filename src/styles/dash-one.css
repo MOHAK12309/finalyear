@@ -17,6 +17,12 @@
     font-weight: 500;
 
   }
+  .head{
+    font-size: 15px;
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+  }
   .content-section h1{
     font-weight: 600;
   }
@@ -65,6 +71,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
     margin: 15px 0;
+
   }
   .main-cards h3{
     font-size: 23px;
@@ -183,11 +190,13 @@
   
   .column {
     flex: 1;
-    background-color: #f0f0f0;
+    background-color: white;
+  
     color: #221c1c;
     padding: 20px;
     border: 1px solid #D2E3C8;
     border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   
   .column + .column {
