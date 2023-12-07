@@ -11,6 +11,7 @@ import Dashboard from "./dash-one";
 const App2 = () => {
   const [side, setSide] = useState(false);
   const [visitors, setVisitors] = useState([]);
+  const [show,setShow]=useState("dashboard")
   const illus = new URL("../images/image2.jpg", import.meta.url);
 
   const toggleMode = () => {
@@ -53,14 +54,14 @@ const App2 = () => {
                   />
                 </h2>
               </div>
-              <button className="button-dashboard">
+              <button onClick={()=>setShow("dashboard")}  className="button-dashboard">
                 <span className={` ${side ? "sidesec2" : ""}`}>Dashboard</span>
               </button>
               <h6 className={`side-head ${side ? "sidesec2" : ""}`}>
                 Analysis
               </h6>
-              <button className="button-dashboard">
-                <span className={` ${side ? "sidesec2" : ""}`}>Report</span>
+              <button onClick={()=>setShow("map")} className="button-dashboard">
+                <span className={` ${side ? "sidesec2" : ""}`}>User Location</span>
               </button>
               <button className="button-dashboard">
                 <span className={` ${side ? "sidesec2" : ""}`}>
@@ -89,8 +90,11 @@ const App2 = () => {
                 <button className="logout">Logout</button>
               </div>
             </div>
+            { show ==="dashboard"&&
             <Dashboard />
-            <div style={{ width: "100%", height: "400px" }}>
+}
+            { show==="map"&&
+              <div style={{ width: "100%", height: "100vh" }}>
               <MapContainer
                 center={[0, 0]}
                 zoom={2}
@@ -120,6 +124,7 @@ const App2 = () => {
                 ))}
               </MapContainer>
             </div>
+}
           </div>
         </div>
       </div>
