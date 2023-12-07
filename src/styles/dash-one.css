@@ -17,12 +17,7 @@
     font-weight: 500;
 
   }
-  .head{
-    font-size: 15px;
-    font-family: 'Inter';
-    text-transform: uppercase;
-    font-weight: bold;
-  }
+ 
   .content-section h1{
     font-weight: 600;
   }
@@ -251,4 +246,9 @@
   }
 
   
-  
+  .head{
+    font-size: 12px;
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+  }
