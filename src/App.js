@@ -11,6 +11,8 @@ import Dashboard from "./components/dash-one";
 import Dashtwo from "./components/dash-two";
 import About from "./components/OTP";
 import App2 from "./components/dash-two";
+import LandingPage from "./components/landingpage";
+
 
 // importing service creation pages
 
@@ -30,6 +32,8 @@ function App() {
           <Route path="/dashtwo" element={<Dashtwo />}></Route>
           <Route path="/otp" element={<About/>}></Route>
           <Route path="/dashboard" element={<App2/>}/>
+          <Route path="/landingpage" element={<LandingPage />}></Route>
+
         </Routes>
       </div>
     </div>
