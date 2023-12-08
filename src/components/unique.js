@@ -11,7 +11,8 @@ import {
   Legend,
   Label,
 } from "recharts";
-
+import ButtonGroup from "@mui/material/ButtonGroup";
+import Button from "@mui/material/Button";
 function Unique() {
   const [visitors, setVisitors] = useState([]);
   const [monthlyData, setMonthlyData] = useState([]);
@@ -130,35 +131,37 @@ function Unique() {
       <div className="column">
         <h2 className="totalvistors">Unique Visitors</h2>
         <div className="column-content">
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <div style={{ margin: "30px" }}>
-              <button
-                className={`chart-btn ${
-                  showCharts === "month" ? "active" : ""
-                }`}
-                onClick={() => setShowcharts("month")}
+        <div style={{ display: "flex", justifyContent: "center" ,marginBottom:"30px",marginTop:"20px" }}>
+              <ButtonGroup
+                variant="outlined"
+                aria-label="outlined button group"
               >
-                {" "}
-                Month
-              </button>
+                <Button
+                  className={`chart-btn ${
+                    showCharts === "month" ? "active" : ""
+                  }`}
+                  onClick={() => setShowcharts("month")}
+                >
+                  Month
+                </Button>
+                <Button
+                  className={`chart-btn ${
+                    showCharts === "day" ? "active" : ""
+                  }`}
+                  onClick={() => setShowcharts("day")}
+                >
+                  Day
+                </Button>
+                <Button
+                  className={`chart-btn ${
+                    showCharts === "year" ? "active" : ""
+                  }`}
+                  onClick={() => setShowcharts("year")}
+                >
+                  Year
+                </Button>
+              </ButtonGroup>
             </div>
-            <div style={{ margin: "30px" }}>
-              <button
-                className={`chart-btn ${showCharts === "day" ? "active" : ""}`}
-                onClick={() => setShowcharts("day")}
-              >
-                Day
-              </button>
-            </div>
-            <div style={{ margin: "30px" }}>
-              <button
-                className={`chart-btn ${showCharts === "year" ? "active" : ""}`}
-                onClick={() => setShowcharts("year")}
-              >
-                Year
-              </button>
-            </div>
-          </div>
           <div>
             <div></div>
             {showCharts === "month" && (

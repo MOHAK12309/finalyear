@@ -136,6 +136,10 @@ form button:hover {
   text-align: left;
 
 }
+.button-dashboard:hover{
+  opacity: 80%;
+  background-color: #333;
+}
 .side-head{
   color: white;
   margin-left: 10px;
@@ -168,10 +172,13 @@ form button:hover {
 .nav2{
 width: 100%;
   background-color: white;
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.021);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.081);
   height: 60px;
   display: flex;
   justify-content: space-between;
+ 
+  z-index: 99;
+
 }
 
 .sideLeft{
@@ -186,7 +193,7 @@ animation-fill-mode: forwards;
    width: 200px;
   }
   100%{
-    width: 40px;
+    width: 60px;
   }
   
 }

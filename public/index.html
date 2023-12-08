@@ -75,18 +75,14 @@
   <script>
 
 AOS.init();
-$(document).ready(function(){
-  $(window).scroll(function(){
-  	var scroll = $(window).scrollTop();
-	  if (scroll > 10) {
-	    $(".pc-nav").css("background" , "#F0EFF7");
-	  }
-
-	  else{
-		  $(".pc-nav").css("background" , "transparent");  	
-	  }
-  })
-})
+$(document).ready(function () {
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop();
+          if (scroll > 10) {
+            $(".nav2").css("background", "#F0EFF7");
+          }
+        });
+      });
 !function(f,b,e,v,n,t,s) {
   if(f.fbq)return;n=f.fbq=function(){n.callMethod?
   n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -197,6 +193,7 @@ fbq('track', 'PageView');
        
       }) 
     }) 
+
     $(document).ready(function(){
       $("#photo-edit2").click(function(e){
         e.preventDefault(e)

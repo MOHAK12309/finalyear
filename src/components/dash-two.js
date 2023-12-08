@@ -7,7 +7,14 @@ import "react-modern-drawer/dist/index.css";
 import logo from "../images/logo-no-background.png";
 import logo2 from "../images/hamburger.png";
 import Dashboard from "./dash-one";
-
+import SettingsIcon from '@mui/icons-material/Settings';
+import Icon from '@mui/material/Icon'
+import NotificationsPausedIcon from '@mui/icons-material/NotificationsPaused';
+import Avatar from '@mui/material/Avatar';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AnalyticsIcon from '@mui/icons-material/Analytics';
+import AddLocationIcon from '@mui/icons-material/AddLocation';
+import CenterFocusStrongIcon from '@mui/icons-material/CenterFocusStrong';
 const App2 = () => {
   const [side, setSide] = useState(false);
   const [visitors, setVisitors] = useState([]);
@@ -44,10 +51,12 @@ const App2 = () => {
               style={{ textAlign: "left" }}
             >
               <div className={`logosec ${side ? "sidesec3" : ""}`}>
+             
                 <h2
                   className={` ${side ? "sidesec2" : ""}`}
                   style={{ textAlign: "center" }}
                 >
+                
                   <img
                     src={logo}
                     alt="Logo"
@@ -56,16 +65,19 @@ const App2 = () => {
                 </h2>
               </div>
               <button onClick={()=>setShow("dashboard")}  className="button-dashboard">
-                <span className={` ${side ? "sidesec2" : ""}`}>Dashboard</span>
+              <DashboardIcon/>
+                <span style={{position:"relative",left:"40px"}} className={` ${side ? "sidesec2" : ""}`}>Dashboard</span>
               </button>
               <h6 className={`side-head ${side ? "sidesec2" : ""}`}>
                 Analysis
               </h6>
               <button onClick={()=>setShow("map")} className="button-dashboard">
-                <span className={` ${side ? "sidesec2" : ""}`}>User Location</span>
+                <AddLocationIcon></AddLocationIcon>
+                <span style={{position:"relative",left:"40px"}} className={` ${side ? "sidesec2" : ""}`}>User Location</span>
               </button>
               <button className="button-dashboard">
-                <span className={` ${side ? "sidesec2" : ""}`}>
+                <CenterFocusStrongIcon></CenterFocusStrongIcon>
+                <span style={{position:"relative",left:"40px"}} className={` ${side ? "sidesec2" : ""}`}>
                   Real-time Analysis
                 </span>
               </button>
@@ -81,18 +93,23 @@ const App2 = () => {
                 <h4 onClick={toggleMode} style={{ cursor: "pointer" }}>
                   <img src={logo2} width="30px" alt="Hamburger Menu" />
                 </h4>
-                <button className="user-button">User</button>
-                <button className="settings-button">Settings</button>
+              
+              
+               < SettingsIcon className="settings-button"></SettingsIcon>
               </div>
 
               <div className="right-section">
-                <button className="notifications">Notifications</button>
-                <button className="email">Email</button>
-                <button className="logout">Logout</button>
+               
+                <NotificationsPausedIcon className="notifications"></NotificationsPausedIcon>
+             
+                <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
               </div>
             </div>
             { show ==="dashboard"&&
-            <Dashboard />
+            <div>
+                 <Dashboard />
+            </div>
+         
 }
             { show==="map"&&
               <div style={{ width: "100%", height: "100vh" }}>

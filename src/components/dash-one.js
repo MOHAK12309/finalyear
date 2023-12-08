@@ -12,6 +12,8 @@ import {
   Legend,
   Label,
 } from "recharts";
+import { Chart as ChartJS } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 import { TypeAnimation } from "react-type-animation";
 import { HashLoader } from "react-spinners";
 import { useDispatch } from "react-redux";
@@ -23,7 +25,9 @@ import Unique from "./unique";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { useSelector } from "react-redux";
 import Button from "@mui/material/Button";
+
 import ButtonGroup from "@mui/material/ButtonGroup";
+import { Golchart } from "./pie";
 function Dashboard() {
   const id = useSelector((state) => state.get_seller_profile_id.user_id);
   const name = useSelector((state) => state.get_seller_profile_id.name);
@@ -414,12 +418,13 @@ function Dashboard() {
           )}
         </div>
       </div>
+      <Golchart/>
       {/* className={`seller-dash-button ${show === "kounselo" ? "active2" : ""}`} */}
       <div className="columns">
         <div className="column">
           <h2 className="totalvistors">Total Visitors</h2>
           <div className="column-content">
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ display: "flex", justifyContent: "center",marginBottom:"30px",marginTop:"20px" }}>
               <ButtonGroup
                 variant="outlined"
                 aria-label="outlined button group"
