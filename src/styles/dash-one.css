@@ -17,12 +17,7 @@
     font-weight: 500;
 
   }
-  .head{
-    font-size: 15px;
-    font-family: 'Inter';
-    text-transform: uppercase;
-    font-weight: bold;
-  }
+ 
   .content-section h1{
     font-weight: 600;
   }
@@ -52,6 +47,8 @@
   }
   .totalvistors{
     color: #7d2ae8;
+    font-size: 20px;
+    display: none;
     
   }
   .main-container {
@@ -136,6 +133,7 @@
     justify-content: center;
     padding: 8px 15px;
     border-radius: 5px;
+    
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 150px;
   }
@@ -159,6 +157,8 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 150px;
   }
+ 
+   
   
   .card-inner {
     display: flex;
@@ -193,6 +193,7 @@
     background-color: white;
   
     color: #221c1c;
+    
     padding: 20px;
     border: 1px solid #D2E3C8;
     border-radius: 5px;
@@ -251,4 +252,9 @@
   }
 
   
-  
+  .head{
+    font-size: 12px;
+    font-family: 'Inter';
+    text-transform: uppercase;
+    font-weight: bold;
+  }
