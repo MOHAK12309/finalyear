@@ -131,6 +131,7 @@
     justify-content: center;
     padding: 8px 15px;
     border-radius: 5px;
+    
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 150px;
   }
@@ -154,6 +155,8 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: 150px;
   }
+ 
+   
   
   .card-inner {
     display: flex;
@@ -188,6 +191,7 @@
     background-color: white;
   
     color: #221c1c;
+    
     padding: 20px;
     border: 1px solid #D2E3C8;
     border-radius: 5px;

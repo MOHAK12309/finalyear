@@ -17,6 +17,7 @@ const App2 = () => {
   const toggleMode = () => {
     setSide(!side);
   };
+  
 
   useEffect(() => {
     // Fetch visitor data from the API

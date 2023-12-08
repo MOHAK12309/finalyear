@@ -202,7 +202,7 @@ function Dashboard() {
       <div className="main-cards">
         <div className="card-one">
           <div className="card-inner">
-            <h3 className="head">Total Visitors</h3>
+            <h3 style={{fontSize:"12px"}} className="head">Total Visitors</h3>
             <br></br>
           </div>
           {data.length !== 0 ? (
@@ -229,7 +229,7 @@ function Dashboard() {
         </div>
         <div className="card-two">
           <div className="card-inner">
-            <h3 className="head">Unique Visitors</h3>
+            <h3 style={{fontSize:"12px"}} className="head">Unique Visitors</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -256,7 +256,7 @@ function Dashboard() {
         </div>
         <div className="card-three">
           <div className="card-inner">
-            <h3 className="head">Avg order value</h3>
+            <h3 style={{fontSize:"12px"}} className="head">Avg order value</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -283,7 +283,7 @@ function Dashboard() {
         </div>
         <div className="card-four">
           <div className="card-inner">
-            <h3 className="head"> cart Abandonment Count</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> cart Abandonment Count</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -310,7 +310,7 @@ function Dashboard() {
         </div>
         <div className="card-five">
           <div className="card-inner">
-            <h3 className="head"> Mobile web conversion rate</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> Mobile web conversion rate</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -336,7 +336,7 @@ function Dashboard() {
         </div>
         <div className="card-six">
           <div className="card-inner">
-            <h3 className="head"> life time Order Value</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> life time Order Value</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -362,7 +362,7 @@ function Dashboard() {
         </div>
         <div className="card-seven">
           <div className="card-inner">
-            <h3 className="head"> conversion rate</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> conversion rate</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -389,7 +389,7 @@ function Dashboard() {
         </div>
         <div className="card-eight">
           <div className="card-inner">
-            <h3 className="head"> average Page Load Time</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> average Page Load Time</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -464,7 +464,7 @@ function Dashboard() {
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="date">
                         <Label
-                          value="Date (Year-Month)"
+                          
                           offset={0}
                           position="bottom"
                         />
@@ -500,7 +500,7 @@ function Dashboard() {
                     >
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="date">
-                        <Label value="Date" offset={0} position="bottom" />
+                        <Label  offset={0} position="bottom" />
                       </XAxis>
                       <YAxis dataKey="count">
                         <Label
@@ -533,7 +533,7 @@ function Dashboard() {
                     >
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="date">
-                        <Label value="Date" offset={0} position="bottom" />
+                        <Label  offset={0} position="bottom" />
                       </XAxis>
                       <YAxis dataKey="count">
                         <Label

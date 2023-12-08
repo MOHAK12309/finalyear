@@ -30,6 +30,7 @@
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
     "react-card-slider-component": "^1.0.9",
+    "react-chartjs-2": "^5.2.0",
     "react-countup": "^6.5.0",
     "react-dom": "^18.2.0",
     "react-dropdown-select": "^4.9.3",
