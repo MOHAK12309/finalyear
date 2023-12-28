@@ -31,8 +31,8 @@ function LandingPage() {
         <section>
           <h2>Your data with</h2> <h2>Real-Time Analytics </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-            facilisi. Proin eget tortor risus. Integer at accumsan ex.
+            "Elevate your online strategy with MetaMetrics, a dynamic analytics platform. <br></br> Real-time insights, customizable dashboards, and user-friendly interface empower users to make informed decisions.<br></br> 
+            Track website performance effortlessly and drive success with data-driven precision."
           </p>
         </section>   
         <button className="get-button">Get Started</button>
