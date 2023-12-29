@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "../styles/log.css";
 import { useState } from "react";
 import axios from "axios";
+
+
+
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Toastcontainer2, toast } from "react-toastify";
@@ -22,6 +25,17 @@ function Log() {
   const navigate = useNavigate("");
   const [forgot, setforgot] = useState("login");
   const dispatch = useDispatch("");
+  const validateEmail = (email) => {
+    // Email regex pattern
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    // Numeric characters only regex pattern
+    const numericRegex = /^[0-9]+$/;
+    return numericRegex.test(phone);
+  };
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -141,6 +155,7 @@ function Log() {
                         <i className="fas fa-envelope"></i>
                         <input
                           type="text"
+                
                           placeholder="Enter your email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
@@ -154,6 +169,7 @@ function Log() {
                           placeholder="Enter your password"
                           required
                           value={password}
+                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                           onChange={(e) => setpasswod(e.target.value)}
                         />
                       </div>
@@ -236,6 +252,7 @@ function Log() {
                         required
                         value={password}
                         onChange={(e) => setpasswod(e.target.value)}
+                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                       />
                     </div>
                     <div className="input-box">
@@ -243,7 +260,7 @@ function Log() {
                       <input
                         type="password"
                         placeholder="Confirm password"
-                        required
+                        required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
                         value={confirm_password}
                         onChange={(e) => setconfirm_passwod(e.target.value)}
                       />

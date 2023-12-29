@@ -12,7 +12,10 @@ import {
   Legend,
   Label,
 } from "recharts";
+import { Chart as ChartJS } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 import { TypeAnimation } from "react-type-animation";
+import { HashLoader } from "react-spinners";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -22,7 +25,9 @@ import Unique from "./unique";
 import { UseSelector } from "react-redux/es/hooks/useSelector";
 import { useSelector } from "react-redux";
 import Button from "@mui/material/Button";
+
 import ButtonGroup from "@mui/material/ButtonGroup";
+import { Golchart } from "./pie";
 function Dashboard() {
   const id = useSelector((state) => state.get_seller_profile_id.user_id);
   const name = useSelector((state) => state.get_seller_profile_id.name);
@@ -201,7 +206,7 @@ function Dashboard() {
       <div className="main-cards">
         <div className="card-one">
           <div className="card-inner">
-            <h3>Total Visitors</h3>
+            <h3 style={{fontSize:"12px"}} className="head">Total Visitors</h3>
             <br></br>
           </div>
           {data.length !== 0 ? (
@@ -222,12 +227,13 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div>
+            <HashLoader color="white" /></div>
           )}
         </div>
         <div className="card-two">
           <div className="card-inner">
-            <h3>Unique Visitors</h3>
+            <h3 style={{fontSize:"12px"}} className="head">Unique Visitors</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -249,12 +255,12 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div><HashLoader color="white" /></div>
           )}
         </div>
         <div className="card-three">
           <div className="card-inner">
-            <h3>Avg order value</h3>
+            <h3 style={{fontSize:"12px"}} className="head">Avg order value</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -276,12 +282,12 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div><HashLoader color="white" /></div>
           )}
         </div>
         <div className="card-four">
           <div className="card-inner">
-            <h3> cart Abandonment Count</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> cart Abandonment Count</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -303,12 +309,12 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div><HashLoader color="white" /></div>
           )}
         </div>
         <div className="card-five">
           <div className="card-inner">
-            <h3> Mobile web conversion rate</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> Mobile web conversion rate</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -329,12 +335,12 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div><HashLoader color="white" /></div>
           )}
         </div>
         <div className="card-six">
           <div className="card-inner">
-            <h3> life time Order Value</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> life time Order Value</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -355,12 +361,12 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div><HashLoader color="white" /></div>
           )}
         </div>
         <div className="card-seven">
           <div className="card-inner">
-            <h3> conversion rate</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> conversion rate</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -382,12 +388,12 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div><HashLoader color="white" /></div>
           )}
         </div>
         <div className="card-eight">
           <div className="card-inner">
-            <h3> average Page Load Time</h3>
+            <h3 style={{fontSize:"12px"}} className="head"> average Page Load Time</h3>
           </div>
 
           {data.length !== 0 ? (
@@ -408,16 +414,17 @@ function Dashboard() {
               );
             })
           ) : (
-            <div>Loading...</div>
+            <div><HashLoader color="white" /></div>
           )}
         </div>
       </div>
+      <Golchart/>
       {/* className={`seller-dash-button ${show === "kounselo" ? "active2" : ""}`} */}
       <div className="columns">
         <div className="column">
           <h2 className="totalvistors">Total Visitors</h2>
           <div className="column-content">
-            <div style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{ display: "flex", justifyContent: "center",marginBottom:"30px",marginTop:"20px" }}>
               <ButtonGroup
                 variant="outlined"
                 aria-label="outlined button group"
@@ -462,7 +469,7 @@ function Dashboard() {
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="date">
                         <Label
-                          value="Date (Year-Month)"
+                          
                           offset={0}
                           position="bottom"
                         />
@@ -498,7 +505,7 @@ function Dashboard() {
                     >
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="date">
-                        <Label value="Date" offset={0} position="bottom" />
+                        <Label  offset={0} position="bottom" />
                       </XAxis>
                       <YAxis dataKey="count">
                         <Label
@@ -531,7 +538,7 @@ function Dashboard() {
                     >
                       <CartesianGrid strokeDasharray="3 3" />
                       <XAxis dataKey="date">
-                        <Label value="Date" offset={0} position="bottom" />
+                        <Label  offset={0} position="bottom" />
                       </XAxis>
                       <YAxis dataKey="count">
                         <Label

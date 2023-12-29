@@ -219,6 +219,9 @@ body {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 30px;
 }
+.notifications{
+  background-color: #1795ce;
+}
 
 .cardBox .card {
   position: relative;
@@ -229,6 +232,7 @@ body {
   justify-content: space-between;
   cursor: pointer;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  
 }
 
 .cardBox .card .numbers {
