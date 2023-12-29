@@ -1,18 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "../styles/log.css";
-import { useState } from "react";
-import axios from "axios";
 
-
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Toastcontainer2, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import axios from "axios";
+import '../styles/log.css'
+
 import { getUserIdFromAuth } from "../Redux/actions/GetSellerIdFromAuthActionCreators";
-const illus = new URL("../images/image2.jpg", import.meta.url);
-const baseUrl = "https://server.careerclassroom.in";
+
 function Log() {
   const [name, setName] = useState("");
   const [lastname, setLastName] = useState("");
@@ -23,19 +19,9 @@ function Log() {
   const [OTP, setOTP] = useState("");
   const [sign, setsign] = useState("signup");
   const navigate = useNavigate("");
-  const [forgot, setforgot] = useState("login");
   const dispatch = useDispatch("");
-  const validateEmail = (email) => {
-    // Email regex pattern
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
-
-  const validatePhone = (phone) => {
-    // Numeric characters only regex pattern
-    const numericRegex = /^[0-9]+$/;
-    return numericRegex.test(phone);
-  };
+  const baseUrls = "http://localhost:8000";
+  const baseUrl = "https://server.careerclassroom.in";
 
   const handleSignUp = async (e) => {
     e.preventDefault();
@@ -49,8 +35,10 @@ function Log() {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      });
 
+        // isEmailVerified: isEmailVerified
+      });
+      // dispatch(getUserIdFromAuth(response.data.data.user._id, response.data.data.user.name, response.data.data.user.email));
       if (response.data.statusbar === "success") {
         dispatch(
           getUserIdFromAuth(
@@ -61,7 +49,7 @@ function Log() {
           )
         );
         toast("Otp Sent to mail");
-        navigate("/otp");
+        setsign("OTP");
         settoken(response.data.token);
 
         console.log(response.data.data.user.name);
@@ -72,7 +60,22 @@ function Log() {
       console.log(error);
     }
   };
+  const google = async () => {
+    const popup = window.open(`${baseUrl}/auth/google`);
+  };
 
+
+  const handleAuthentication = async () => {
+    try {
+      const response = await axios.get(`${baseUrl}/auth/google`); // Make a GET request to your Express.js route
+      const user = await response;
+
+      // Dispatch the loginUser action with the authenticated user data
+      dispatch(user.data.userCheck._id);
+    } catch (error) {
+      console.error(error);
+    }
+  };
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -91,7 +94,7 @@ function Log() {
       console.log("hi");
       if (response.data.status === "false") {
         toast(" Please verify your mail ");
-        navigate("/otp");
+        setsign("OTP");
       }
       if (response.data.statusbar === "success") {
         dispatch(
@@ -104,7 +107,9 @@ function Log() {
         );
         toast("Login successfull");
 
-        navigate("/");
+        navigate("/dashboard");
+
+        // mohak233334@gmail.com
       }
       // if (response.data.statusbar === "success") {
       //   dispatch(getUserIdFromAuth(response.data.data.user._id, response.data.data.user.lastname, response.data.data.user.name, response.data.data.user.email));
@@ -118,168 +123,217 @@ function Log() {
       // }
     }
   };
+  const handleVerify = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${baseUrl}/api/v1/user/verify`, {
+        // lastname:lastname,
+        OTP: OTP,
+
+        // isEmailVerified: isEmailVerified
+      });
+      if (response.data.statusbar === "true") {
+        console.log("verified");
+        window.alert("User Created ");
+        setsign("login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleRegiter = async (e) => {
+    e.preventDefault();
+    toast("Reset password email sent to your email");
+    try {
+      const response = await axios.post(`${baseUrl}/api/v1/user/forgot`, {
+        // lastname:lastname,
+        email: email,
+
+        // isEmailVerified: isEmailVerified
+      });
+      if (response.data.statusbar === "success") {
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-    // <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <>
-      <div className="login-signup">
-        <div className="container2">
-          <input type="checkbox" id="flip" />
-          <div className="cover">
-            <div className="front">
-              <img src={illus} alt="" />
-              <div className="text">
-                <span className="text-1">MetaMetrics</span>
-                <span className="text-2">Let's get connected</span>
-              </div>
-            </div>
-            <div className="back">
-              <img className="backImg" src={illus} alt="" />
-              <div className="text2">
-                <span className="text-3">
-                  Complete miles of journey <br></br> with one step
-                </span>
-                <span className="text-4">Let's get started</span>
-              </div>
-            </div>
-          </div>
-          <div className="forms">
-            <div className="form-content">
-              <div className="login-form">
-                <div className="title">Login</div>
-                {/* login for got switching */}
-                {forgot === "login" && (
-                  <form onSubmit={handleLogin}>
-                    <div className="input-boxes">
-                      <div className="input-box">
-                        <i className="fas fa-envelope"></i>
-                        <input
-                          type="text"
-                
-                          placeholder="Enter your email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                        />
-                      </div>
-                      <div className="input-box">
-                        <i className="fas fa-lock"></i>
-                        <input
-                          type="password"
-                          placeholder="Enter your password"
-                          required
-                          value={password}
-                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                          onChange={(e) => setpasswod(e.target.value)}
-                        />
-                      </div>
-                      <div className="text">
-                        <a onClick={() => setforgot("forgot")} href="#">
-                          Forgot password?
-                        </a>
-                      </div>
-                      <div className="button input-box">
-                        <input type="submit" value="Submit" />
-                      </div>
-                      <div className="text sign-up-text">
-                        Don't have an account?{" "}
-                        <label for="flip">Sigup now</label>
-                      </div>
-                    </div>
-                  </form>
-                )}
-
-                {forgot === "forgot" && (
-                  <form onSubmit={handleLogin}>
-                    <div className="input-boxes">
-                      <div className="input-box">
-                        <i className="fas fa-envelope"></i>
-                        <input
-                          type="text"
-                          placeholder="Enter your email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          required
-                        />
-                      </div>
-
-                      {/* <div className="text">
-                        <a href="#">Forgot password?</a>
-                      </div> */}
-                      <div className="button input-box">
-                        <input
-                          type="submit"
-                          value="Submit"
-                        />
-                      </div>
-                      <div className="text sign-up-text">
-                        Back to{" "}
-                        <label for="flip">Login</label>
-                      </div>
-                    </div>
-                  </form>
-                )}
-              </div>
-              <div className="signup-form">
-                <div className="title">Signup</div>
-                <form onSubmit={handleSignUp}>
-                  <div className="input-boxes">
-                    <div className="input-box">
-                      <i className="fas fa-user"></i>
-                      <input
-                        type="text"
-                        placeholder="Enter your name"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                      />
-                    </div>
-                    <div className="input-box">
-                      <i className="fas fa-envelope"></i>
-                      <input
-                        type="text"
-                        placeholder="Enter your email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                      />
-                    </div>
-                    <div className="input-box">
-                      <i className="fas fa-lock"></i>
-                      <input
-                        type="password"
-                        placeholder="Enter your password"
-                        required
-                        value={password}
-                        onChange={(e) => setpasswod(e.target.value)}
-                       pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                      />
-                    </div>
-                    <div className="input-box">
-                      <i className="fas fa-lock"></i>
-                      <input
-                        type="password"
-                        placeholder="Confirm password"
-                        required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                        value={confirm_password}
-                        onChange={(e) => setconfirm_passwod(e.target.value)}
-                      />
-                    </div>
-                    <div className="button input-box">
-                      <input type="submit" value="Submit" />
-                    </div>
-                    <div className="text sign-up-text">
-                      Already have an account?{" "}
-                      <label for="flip">Login now</label>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="sign-main">
+      <div className="auth-logo">
+      
       </div>
-    </>
+
+      <div className="auth-main">
+        {sign == "signup" && (
+          <div>
+            <div className="sign-head">Sign Up </div>
+            {/* <button onClick={google}>google</button> */}
+            <form onSubmit={handleSignUp}>
+              <input
+                required
+                className="sign-form"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                type="text"
+                placeholder="First name"
+              ></input>
+              <input
+                required
+                className="sign-form"
+                onChange={(e) => setLastName(e.target.value)}
+                type="text"
+                placeholder="Last name"
+              ></input>
+
+              <input
+                required
+                className="sign-form"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email address"
+              ></input>
+
+              <input
+                required
+                className="sign-form"
+                value={password}
+                onChange={(e) => setpasswod(e.target.value)}
+                type="password"
+                placeholder="Password"
+              ></input>
+
+              <input
+                required
+                className="sign-form"
+                value={confirm_password}
+                onChange={(e) => setconfirm_passwod(e.target.value)}
+                type="password"
+                placeholder="Confirm password"
+              ></input>
+              <br></br>
+              <button className="sign-btn" type="submit">
+                Sign up
+              </button>
+            </form>
+            <h5 style={{ marginTop: "20px", color: "white" }}>Or</h5>
+            <button className="sign-switch" onClick={() => setsign("login")}>
+              Have an account ?
+            </button>
+          </div>
+        )}
+
+        {sign == "login" && (
+          <div>
+            <h4 className="sign-head">Login </h4>
+            <form onSubmit={handleLogin}>
+              {/* <input onChange={(e)=>setLastName(e.target.value)} type='text' placeholder='last Name' ></input> */}
+
+              <input
+                required
+                className="sign-form"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email address"
+              ></input>
+
+              <input
+                required
+                className="sign-form"
+                value={password}
+                onChange={(e) => setpasswod(e.target.value)}
+                type="password"
+                placeholder="Password"
+              ></input>
+
+              <button className="sign-btn" type="submit">
+                Login{" "}
+              </button>
+            </form>
+            <button
+              onClick={() => setsign("forgot")}
+              style={{
+                background: "transparent",
+                border: "none",
+                color: "white",
+                marginTop: "10px",
+              }}
+            >
+              Forgot Password?
+            </button>
+            <br></br>
+            <h5 style={{ marginTop: "10px", color: "white" }}>Or</h5>
+
+            <button className="sign-switch" onClick={() => setsign("signup")}>
+              {" "}
+              Create your account{" "}
+            </button>
+          </div>
+        )}
+        {sign == "OTP" && (
+          <div>
+            <h4 className="sign-head">Verify Your Account</h4>
+            <form onSubmit={handleVerify}>
+              {/* <input onChange={(e)=>setLastName(e.target.value)} type='text' placeholder='last Name' ></input> */}
+
+              <input
+                required
+                className="sign-form"
+                value={OTP}
+                onChange={(e) => setOTP(e.target.value)}
+                type="text"
+                placeholder="otp"
+              ></input>
+
+              <button className="sign-btn" type="submit">
+                Verify{" "}
+              </button>
+            </form>
+            <h5 style={{ color: "white", marginTop: "20px" }}>Or</h5>
+            <button className="sign-switch" onClick={() => setsign("login")}>
+              Back to login
+            </button>
+          </div>
+        )}
+
+        {sign == "forgot" && (
+          <div>
+            <h5 style={{}} className="sign-head">
+              Forgot Password?
+            </h5>
+            <h6 className="sign-head">
+              Please Enter your email to get your reset password link{" "}
+            </h6>
+            <form onSubmit={handleRegiter}>
+              {/* <input onChange={(e)=>setLastName(e.target.value)} type='text' placeholder='last Name' ></input> */}
+
+              <input
+                required
+                className="sign-form"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                type="email"
+                placeholder="Email address"
+              ></input>
+
+              <button className="sign-btn" type="submit">
+                Submit{" "}
+              </button>
+            </form>
+
+            <button
+              className="sign-switch"
+              style={{ marginTop: "20px" }}
+              onClick={() => setsign("signup")}
+            >
+              {" "}
+              Back to login{" "}
+            </button>
+          </div>
+        )}
+      </div>
+    </div>
   );
 }
 export default Log;
