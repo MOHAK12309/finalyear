@@ -4,22 +4,6 @@ import "../styles/landingpage.css"
 
 function LandingPage() {
   return (
-    // <>
-    //   <div className="">
-    //     Hello
-    //   </div>
-    // </>
-    // <div className="top">
-    //   <div className="header">
-    //     <div className="buttons-container">
-    //       <button className="header-button">SignUp</button>
-    //       <button className="header-button">SignUp</button>
-    //     </div>
-    //   </div>
-    //   <div className="content">
-    //     <p>This is the text between the page.</p>
-    //   </div>
-    // </div>
     <div className="main-content">
     <div className="top">
       <header className="top-header">
