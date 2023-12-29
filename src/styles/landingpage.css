@@ -1,9 +1,9 @@
 
-body, h1, h2, p, button {
+ /* h1, h2, p, button {
     margin: 0;
     padding: 0;
-  }
-  body {
+  } */
+  .main-content{
     margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #f8f8f8;

@@ -20,6 +20,7 @@ function LandingPage() {
     //     <p>This is the text between the page.</p>
     //   </div>
     // </div>
+    <div className="main-content">
     <div className="top">
       <header className="top-header">
         <div className="buttons-container">
@@ -37,6 +38,7 @@ function LandingPage() {
         </section>   
         <button className="get-button">Get Started</button>
         </main>
+    </div>
     </div>
   );
 }
