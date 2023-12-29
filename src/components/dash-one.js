@@ -144,22 +144,7 @@ function Dashboard() {
       setyearlydata(aggregatedData);
     }
   }, [visitors]);
-  // useEffect(() => {
-  //   if  (!id) {
-  //     navigate("/log", {
-  //       replace: true,
-  //       state: {
-  //         signIn: true,
-  //       },
-  //     });
-  //   } else {
-  //     toast.error("You are not allowed to open this URL");
-  //     navigate("/");
-  //     handleUnique3();
-  //     handleUnique();
-  //     // Assuming fetchData is a function you want to call when 'id' is truthy
-  //   }
-  // }, [navigate, id]);
+ 
   const handleLogout2 = async (e) => {
     e.preventDefault();
 

@@ -10,6 +10,7 @@
     background: url('../images/image3.jpg') center/cover fixed;
     overflow: hidden;
     height: 100vh;
+    padding-top: 200px;
   backdrop-filter: blur(0.6px);
   }
 
@@ -48,7 +49,9 @@
   
   .top-main {
     padding: 40px;
+  
     text-align: center;
+  
   }
   
   section {

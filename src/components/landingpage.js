@@ -22,13 +22,8 @@ function LandingPage() {
     // </div>
     <div className="main-content">
     <div className="top">
-      <header className="top-header">
-        <div className="buttons-container">
-           <button className="header-button">SignUp</button>
-           <button className="header-button">SignUp</button>
-        </div>
-      </header>
-      <main className="top-main">
+     
+      <main className="">
         <section>
           <h2>Your data with</h2> <h2>Real-Time Analytics </h2>
           <p>
@@ -36,7 +31,7 @@ function LandingPage() {
             Track website performance effortlessly and drive success with data-driven precision."
           </p>
         </section>   
-        <button className="get-button">Get Started</button>
+       <Link to="/dashboard"><button className="get-button">Get Started</button></Link> 
         </main>
     </div>
     </div>
