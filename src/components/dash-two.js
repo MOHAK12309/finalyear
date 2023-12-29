@@ -15,12 +15,34 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import AnalyticsIcon from '@mui/icons-material/Analytics';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import CenterFocusStrongIcon from '@mui/icons-material/CenterFocusStrong';
+import { getUserIdFromAuth } from "../Redux/actions/GetSellerIdFromAuthActionCreators";
+import { UseSelector } from "react-redux/es/hooks/useSelector";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 const App2 = () => {
   const [side, setSide] = useState(false);
   const [visitors, setVisitors] = useState([]);
   const [show,setShow]=useState("dashboard")
   const illus = new URL("../images/image2.jpg", import.meta.url);
-
+  const id = useSelector((state) => state.get_seller_profile_id.user_id);
+  const navigate = useNavigate("");
+ useEffect(() => {
+    if  (!id) {
+      navigate("/portal", {
+        replace: true,
+        state: {
+          signIn: true,
+        },
+      });
+    } else {
+      toast.error("You are not allowed to open this URL");
+      navigate("/dashboard");
+   
+      // Assuming fetchData is a function you want to call when 'id' is truthy
+    }
+  }, [navigate, id]);
   const toggleMode = () => {
     setSide(!side);
   };

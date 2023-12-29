@@ -26,13 +26,13 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/renderhome" element={<RenderHome />}></Route>
-          <Route path="/" element={<Log />}></Route>
+          <Route path="/portal" element={<Log />}></Route>
        
           <Route path="/home" element={<Home />}></Route>
           <Route path="/dashtwo" element={<Dashtwo />}></Route>
           <Route path="/otp" element={<About/>}></Route>
           <Route path="/dashboard" element={<App2/>}/>
-          <Route path="/landingpage" element={<LandingPage />}></Route>
+          <Route path="/" element={<LandingPage />}></Route>
 
         </Routes>
       </div>

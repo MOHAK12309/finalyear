@@ -129,7 +129,7 @@ function Unique() {
   return (
     <div className="columns">
       <div className="column">
-        <h2 className="totalvistors">Unique Visitors</h2>
+
         <div className="column-content">
         <div style={{ display: "flex", justifyContent: "center" ,marginBottom:"30px",marginTop:"20px" }}>
               <ButtonGroup
@@ -175,15 +175,11 @@ function Unique() {
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="date">
-                      <Label
-                        value="Date (Year-Month)"
-                        offset={0}
-                        position="bottom"
-                      />
+                     
                     </XAxis>
                     <YAxis dataKey="count">
                       <Label
-                        value="Total Visitors"
+                        value="Unique Visitors"
                         angle={-90}
                         position="insideLeft"
                       />
@@ -193,7 +189,7 @@ function Unique() {
                     <Line
                       type="monotone"
                       dataKey="count"
-                      name="Total Visitors"
+                      name="Unique Visitors"
                       stroke="rgba(75, 192, 192, 1)"
                       activeDot={{ r: 8 }}
                     />
@@ -212,11 +208,11 @@ function Unique() {
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="date">
-                      <Label value="Date" offset={0} position="bottom" />
+                  
                     </XAxis>
                     <YAxis dataKey="count">
                       <Label
-                        value="Total Visitors"
+                        value="Unique Visitors"
                         angle={-90}
                         position="insideLeft"
                       />
@@ -226,7 +222,7 @@ function Unique() {
                     <Line
                       type="monotone"
                       dataKey="count"
-                      name="Total Visitors"
+                      name="Unique Visitors"
                       stroke="rgba(75, 192, 192, 1)"
                       activeDot={{ r: 8 }}
                     />
@@ -245,11 +241,11 @@ function Unique() {
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="date">
-                      <Label value="Date" offset={0} position="bottom" />
+                    
                     </XAxis>
                     <YAxis dataKey="count">
                       <Label
-                        value="Total Visitors"
+                        value="Unique Visitors"
                         angle={-90}
                         position="insideLeft"
                       />
@@ -259,7 +255,7 @@ function Unique() {
                     <Line
                       type="monotone"
                       dataKey="count"
-                      name="Total Visitors"
+                      name="Unique Visitors"
                       stroke="rgba(75, 192, 192, 1)"
                       activeDot={{ r: 8 }}
                     />

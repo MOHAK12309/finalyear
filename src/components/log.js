@@ -201,6 +201,7 @@ function Log() {
                 onChange={(e) => setpasswod(e.target.value)}
                 type="password"
                 placeholder="Password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               ></input>
 
               <input
@@ -210,6 +211,7 @@ function Log() {
                 onChange={(e) => setconfirm_passwod(e.target.value)}
                 type="password"
                 placeholder="Confirm password"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               ></input>
               <br></br>
               <button className="sign-btn" type="submit">
@@ -245,6 +247,7 @@ function Log() {
                 onChange={(e) => setpasswod(e.target.value)}
                 type="password"
                 placeholder="Password"
+                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
               ></input>
 
               <button className="sign-btn" type="submit">
